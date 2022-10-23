@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->double('price');
             $table->integer('stock');
-            $table->boolean('promotion')->default(false);
+            $table->boolean('promotion')->default(0);
             $table->uuid('category_id');
             $table->foreign('category_id')
                 ->references('id')

@@ -55,6 +55,18 @@
                 </table>
             </div>
         </div>
+
+        @if($errors->any())
+            <div class="alert alert-danger my-3">
+                <p>Product non saved because : </p>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
     </div>
 
     <!-- modals -->
@@ -85,8 +97,8 @@
                                 <input type="number" id="stock" class="form-control" name="stock">
                             </div>
 
-                            <div class="form-check mt-3 mb-3">
-                                <input type="checkbox" id="promotion" class="form-check-input" name="promotion" value='1'>
+                            <div class="form-check form-switch mt-3 mb-3">
+                                <input type="checkbox" id="promotion" class="form-check-input" name="promotion" value="1">
                                 <label for="price" class="form-check-label">Promotion</label>
                             </div>
 
